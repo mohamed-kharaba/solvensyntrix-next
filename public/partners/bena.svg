@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" fill="none">
+  <path d="M10 50 L30 10 L50 50" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M18 36h24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="30" cy="10" r="4" fill="currentColor"/>
+  <text x="64" y="38" font-family="system-ui, sans-serif" font-weight="800" font-size="22" fill="currentColor" letter-spacing="-0.5">bena</text>
+</svg>

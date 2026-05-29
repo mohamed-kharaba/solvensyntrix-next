@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <path d="M30 8 C18 20 10 28 10 36 C10 47 19 54 30 54 C41 54 50 47 50 36 C50 28 42 20 30 8Z" stroke="currentColor" stroke-width="3" fill="none"/>
+  <path d="M18 38 C20 34 24 32 30 32 C36 32 40 34 42 38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <text x="64" y="38" font-family="system-ui, sans-serif" font-weight="700" font-size="20" fill="currentColor" letter-spacing="-0.3">Aqualine</text>
+</svg>

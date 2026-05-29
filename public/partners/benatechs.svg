@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <rect x="2" y="2" width="56" height="56" rx="10" stroke="currentColor" stroke-width="3"/>
+  <path d="M14 18h20c5 0 8 3 8 7s-3 7-8 7H14V18z" fill="currentColor"/>
+  <path d="M14 32h22c6 0 9 3 9 8s-3 8-9 8H14V32z" fill="currentColor"/>
+  <text x="72" y="38" font-family="system-ui, sans-serif" font-weight="700" font-size="20" fill="currentColor" letter-spacing="-0.5">BenaTechs</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" fill="none">
+  <circle cx="30" cy="30" r="22" stroke="currentColor" stroke-width="3"/>
+  <path d="M19 30h22M30 19v22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="30" cy="30" r="8" fill="currentColor"/>
+  <text x="64" y="38" font-family="system-ui, sans-serif" font-weight="700" font-size="22" fill="currentColor" letter-spacing="-0.5">ehmena</text>
+</svg>
