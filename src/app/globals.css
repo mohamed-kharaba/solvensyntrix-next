@@ -1,0 +1,374 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─── DESIGN.md raw custom properties ─────────────────────────────────────── */
+:root {
+  /* Canvas & surfaces */
+  --ds-canvas: #000000;
+  --ds-surface-card: #0a0a0c;
+  --ds-surface-elevated: #101012;
+  --ds-surface-deep: #06060a;
+  --ds-surface-light: #f1f7fe;
+
+  /* Text */
+  --ds-ink: #fcfdff;
+  --ds-body-text: rgba(252, 253, 255, 0.86);
+  --ds-charcoal: rgba(252, 253, 255, 0.7);
+  --ds-mute: #a1a4a5;
+  --ds-ash: #888e90;
+  --ds-stone: #464a4d;
+  --ds-on-light: #000000;
+  --ds-on-light-mute: rgba(0, 0, 51, 0.7);
+
+  /* Borders */
+  --ds-hairline: rgba(255, 255, 255, 0.06);
+  --ds-hairline-strong: rgba(255, 255, 255, 0.14);
+  --ds-divider-soft: rgba(255, 255, 255, 0.04);
+
+  /* Accent solid */
+  --ds-accent-orange: #ff801f;
+  --ds-accent-yellow: #ffc53d;
+  --ds-accent-blue: #3b9eff;
+  --ds-accent-green: #11ff99;
+  --ds-accent-red: #ff2047;
+  --ds-link: #3b9eff;
+
+  /* Accent glows */
+  --ds-accent-orange-glow: rgba(255, 89, 0, 0.22);
+  --ds-accent-blue-glow: rgba(0, 117, 255, 0.34);
+  --ds-accent-green-glow: rgba(34, 255, 153, 0.18);
+  --ds-accent-yellow-glow: rgba(255, 197, 61, 0.22);
+  --ds-accent-red-glow: rgba(255, 32, 71, 0.34);
+
+  /* shadcn compatibility — dark-canvas defaults */
+  --background: #000000;
+  --foreground: #fcfdff;
+  --card: #0a0a0c;
+  --card-foreground: #fcfdff;
+  --popover: #0a0a0c;
+  --popover-foreground: #fcfdff;
+  --primary: #fcfdff;
+  --primary-foreground: #000000;
+  --secondary: #101012;
+  --secondary-foreground: #fcfdff;
+  --muted: #101012;
+  --muted-foreground: rgba(252, 253, 255, 0.7);
+  --accent: #101012;
+  --accent-foreground: #fcfdff;
+  --destructive: #ff2047;
+  --border: rgba(255, 255, 255, 0.14);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: rgba(255, 255, 255, 0.3);
+  --radius: 0.5rem;
+
+  /* sidebar */
+  --sidebar: #0a0a0c;
+  --sidebar-foreground: #fcfdff;
+  --sidebar-primary: #fcfdff;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #101012;
+  --sidebar-accent-foreground: #fcfdff;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-ring: rgba(255, 255, 255, 0.3);
+}
+
+/* Light mode overrides */
+.light {
+  /* DESIGN.md surface & canvas — light inversions */
+  --ds-canvas: #ffffff;
+  --ds-surface-card: #f5f7fa;
+  --ds-surface-elevated: #eef1f6;
+  --ds-surface-deep: #e8ecf2;
+  --ds-surface-light: #f1f7fe;
+
+  /* Text — dark on light */
+  --ds-ink: #0a0a0c;
+  --ds-body-text: rgba(10, 10, 12, 0.82);
+  --ds-charcoal: rgba(10, 10, 12, 0.6);
+  --ds-mute: #6b7280;
+  --ds-ash: #9ca3af;
+  --ds-stone: #d1d5db;
+  --ds-on-light: #000000;
+  --ds-on-light-mute: rgba(0, 0, 51, 0.7);
+
+  /* Borders — dark hairlines on light */
+  --ds-hairline: rgba(0, 0, 0, 0.06);
+  --ds-hairline-strong: rgba(0, 0, 0, 0.12);
+  --ds-divider-soft: rgba(0, 0, 0, 0.04);
+
+  /* Accents stay the same — just toned down glows */
+  --ds-accent-orange-glow: rgba(255, 89, 0, 0.10);
+  --ds-accent-blue-glow: rgba(0, 117, 255, 0.12);
+  --ds-accent-green-glow: rgba(34, 255, 153, 0.10);
+  --ds-accent-yellow-glow: rgba(255, 197, 61, 0.10);
+  --ds-accent-red-glow: rgba(255, 32, 71, 0.10);
+
+  /* shadcn tokens */
+  --background: #ffffff;
+  --foreground: #0a0a0c;
+  --card: #f5f7fa;
+  --card-foreground: #0a0a0c;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0c;
+  --primary: #0a0a0c;
+  --primary-foreground: #ffffff;
+  --secondary: #eef1f6;
+  --secondary-foreground: #0a0a0c;
+  --muted: #eef1f6;
+  --muted-foreground: rgba(10, 10, 12, 0.6);
+  --accent: #eef1f6;
+  --accent-foreground: #0a0a0c;
+  --destructive: #ff2047;
+  --border: rgba(0, 0, 0, 0.12);
+  --input: rgba(0, 0, 0, 0.12);
+  --ring: rgba(0, 0, 0, 0.25);
+  --sidebar: #f5f7fa;
+  --sidebar-foreground: #0a0a0c;
+  --sidebar-primary: #0a0a0c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eef1f6;
+  --sidebar-accent-foreground: #0a0a0c;
+  --sidebar-border: rgba(0, 0, 0, 0.08);
+  --sidebar-ring: rgba(0, 0, 0, 0.2);
+}
+
+/* ─── Tailwind theme mapping ───────────────────────────────────────────────── */
+@theme inline {
+  /* shadcn tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* DESIGN.md surface & canvas */
+  --color-canvas: var(--ds-canvas);
+  --color-surface-card: var(--ds-surface-card);
+  --color-surface-elevated: var(--ds-surface-elevated);
+  --color-surface-deep: var(--ds-surface-deep);
+  --color-surface-light: var(--ds-surface-light);
+
+  /* DESIGN.md text */
+  --color-ink: var(--ds-ink);
+  --color-body-text: var(--ds-body-text);
+  --color-charcoal: var(--ds-charcoal);
+  --color-mute: var(--ds-mute);
+  --color-ash: var(--ds-ash);
+  --color-stone: var(--ds-stone);
+  --color-on-light: var(--ds-on-light);
+  --color-on-light-mute: var(--ds-on-light-mute);
+
+  /* DESIGN.md borders */
+  --color-hairline: var(--ds-hairline);
+  --color-hairline-strong: var(--ds-hairline-strong);
+  --color-divider-soft: var(--ds-divider-soft);
+
+  /* DESIGN.md accent solid */
+  --color-accent-orange: var(--ds-accent-orange);
+  --color-accent-yellow: var(--ds-accent-yellow);
+  --color-accent-blue: var(--ds-accent-blue);
+  --color-accent-green: var(--ds-accent-green);
+  --color-accent-red: var(--ds-accent-red);
+  --color-link: var(--ds-link);
+
+  /* DESIGN.md accent glows */
+  --color-accent-orange-glow: var(--ds-accent-orange-glow);
+  --color-accent-blue-glow: var(--ds-accent-blue-glow);
+  --color-accent-green-glow: var(--ds-accent-green-glow);
+  --color-accent-red-glow: var(--ds-accent-red-glow);
+
+  /* Fonts — intentionally omitted here; next/font sets these as real values on <html> */
+
+  /* shadcn radius scale */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* DESIGN.md radius scale */
+  --radius-ds-xs: 4px;
+  --radius-ds-sm: 6px;
+  --radius-ds-md: 8px;
+  --radius-ds-lg: 12px;
+  --radius-ds-xl: 16px;
+  --radius-ds-full: 9999px;
+
+  /* DESIGN.md spacing scale */
+  --spacing-ds-xxs: 2px;
+  --spacing-ds-xs: 4px;
+  --spacing-ds-sm: 8px;
+  --spacing-ds-md: 12px;
+  --spacing-ds-lg: 16px;
+  --spacing-ds-xl: 24px;
+  --spacing-ds-xxl: 32px;
+  --spacing-ds-xxxl: 48px;
+  --spacing-ds-section: 96px;
+  --spacing-ds-band: 128px;
+}
+
+/* ─── Base layer ──────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--ds-canvas);
+    color: var(--ds-ink);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  /* Domaine Display substitute — Playfair Display */
+  .font-display {
+    font-family: var(--font-display), "Playfair Display", Georgia, serif;
+    font-feature-settings: "ss01", "liga";
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  /* ABC Favorit substitute — DM Sans */
+  .font-body {
+    font-family: var(--font-body), "DM Sans", system-ui, sans-serif;
+    letter-spacing: -0.005em;
+  }
+
+  /* Arabic locale: Tajawal overrides all font classes */
+  [dir="rtl"],
+  [dir="rtl"] body {
+    font-family: var(--font-tajawal), "Tajawal", "Cairo", system-ui, sans-serif;
+  }
+
+  [dir="rtl"] .font-body,
+  [dir="rtl"] .font-sans,
+  [dir="rtl"] .font-heading,
+  [dir="rtl"] .font-display,
+  [dir="rtl"] .font-mono {
+    font-family: var(--font-tajawal), "Tajawal", "Cairo", system-ui, sans-serif;
+    letter-spacing: 0;
+  }
+}
+
+/* ─── Entrance animations ─────────────────────────────────────────────────── */
+@layer utilities {
+  /* Base: hidden state */
+  .anim-fade-up {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .anim-fade-down {
+    opacity: 0;
+    transform: translateY(-24px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .anim-fade-left {
+    opacity: 0;
+    transform: translateX(-36px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .anim-fade-right {
+    opacity: 0;
+    transform: translateX(36px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .anim-scale-up {
+    opacity: 0;
+    transform: scale(0.94);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .anim-fade {
+    opacity: 0;
+    transition: opacity 0.7s ease;
+  }
+
+  /* Visible state — add this class via JS to trigger */
+  .in-view {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Stagger delays for child elements */
+  .stagger-1 { transition-delay: 0.08s; }
+  .stagger-2 { transition-delay: 0.16s; }
+  .stagger-3 { transition-delay: 0.24s; }
+  .stagger-4 { transition-delay: 0.32s; }
+  .stagger-5 { transition-delay: 0.40s; }
+}
+
+/* ─── Utility: atmospheric section glow ───────────────────────────────────── */
+@layer utilities {
+  .glow-orange {
+    background: radial-gradient(
+      ellipse 80% 400px at 50% 0%,
+      var(--ds-accent-orange-glow) 0%,
+      transparent 100%
+    );
+  }
+  .glow-blue {
+    background: radial-gradient(
+      ellipse 80% 400px at 50% 0%,
+      var(--ds-accent-blue-glow) 0%,
+      transparent 100%
+    );
+  }
+  .glow-green {
+    background: radial-gradient(
+      ellipse 80% 400px at 50% 0%,
+      var(--ds-accent-green-glow) 0%,
+      transparent 100%
+    );
+  }
+  .glow-yellow {
+    background: radial-gradient(
+      ellipse 80% 400px at 50% 0%,
+      var(--ds-accent-yellow-glow) 0%,
+      transparent 100%
+    );
+  }
+  .glow-red {
+    background: radial-gradient(
+      ellipse 80% 400px at 50% 0%,
+      var(--ds-accent-red-glow) 0%,
+      transparent 100%
+    );
+  }
+}
