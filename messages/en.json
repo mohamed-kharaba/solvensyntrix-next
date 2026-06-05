@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Solven Syntrix — Digital Infrastructure for Syria",
-    "description": "A technology operations and investment company focused on establishing scalable digital ecosystems in Syria.",
+    "description": "A leading tech firm in software development, web design, digital marketing, and a business incubator connecting regional investors to the Syrian market.",
     "privacyTitle": "Privacy Policy — Solven Syntrix",
     "termsTitle": "Terms of Use — Solven Syntrix"
   },
@@ -18,9 +18,9 @@
     "switchLanguage": "العربية"
   },
   "hero": {
-    "headline": "Powering the Next Generation of Syrian Technology",
-    "body": "We invest in and operate the digital infrastructure driving Syria's future.",
-    "tagline": "Invest. Build. Scale.",
+    "headline": "Where Digital Engineering Meets Investment Opportunities",
+    "body": "A leading tech firm in web/app development and digital marketing, functioning as a business incubator connecting regional investors to promising opportunities in the Syrian market.",
+    "tagline": "Develop. Market. Invest.",
     "ctaPrimary": "Partner With Us",
     "ctaSecondary": "See What We Build"
   },
@@ -29,83 +29,83 @@
   },
   "about": {
     "badge": "Who We Are",
-    "headline": "We are more than a service provider.",
-    "body": "A regional technology company operating at the intersection of engineering, investment, and digital infrastructure.",
+    "headline": "We combine technical excellence with investment power",
+    "body": "We are a full-service technology company for software development and digital marketing, while simultaneously operating as a strategic business incubator and accelerator connecting a network of investors from KSA, UAE, Turkey, and Syria",
     "cards": [
       {
-        "title": "Technical Engineering",
-        "description": "We design and build scalable digital systems — cloud-native, API-first, and engineered for long-term reliability."
+        "title": "Software Design & Development",
+        "description": "We build cutting-edge websites and mobile applications that meet the highest global standards to serve businesses across the region"
       },
       {
-        "title": "Investment Framework",
-        "description": "We structure and manage technology investments with deep due diligence, sustainable growth modeling, and operational oversight."
+        "title": "Digital Marketing",
+        "description": "We deliver innovative digital marketing strategies to boost brand presence and increase sales"
       },
       {
-        "title": "Operational Management",
-        "description": "We don't just launch — we operate. Our team stays embedded post-launch to ensure systems scale with the business."
+        "title": "Business Incubators & Accelerators",
+        "description": "We support and develop startups in the Syrian market by providing the guidance, resources, and infrastructure needed for success"
       },
       {
-        "title": "Strategic Partnerships",
-        "description": "We build long-term partnerships that align capital, technology, and talent toward a shared digital future in Syria."
+        "title": "Regional Investment Network",
+        "description": "We connect promising ventures in Syria with a wide network of investors in KSA, UAE, and Turkey to create sustainable growth opportunities"
       }
     ]
   },
   "whyNow": {
     "badge": "Why Now",
-    "headline": "A market at its digital inflection point.",
-    "body": "The Syrian market is entering an unstructured phase of digital restructuring, with significant gaps in:",
+    "headline": "A golden investment opportunity in the Syrian market.",
+    "body": "The Syrian market is witnessing a rapid phase of rebuilding and technological advancement, creating unprecedented growth opportunities in:",
     "points": [
-      "Enterprise-grade technology infrastructure",
-      "Advanced communication systems",
-      "Scalable digital architectures",
-      "High-quality technology investment"
+      "Digital transformation and software development",
+      "E-commerce and digital marketing",
+      "Startup foundation and support",
+      "Joint regional investment (Syria, KSA, UAE, Turkey)"
     ],
-    "closing": "This gap represents a strategic opportunity to build modern digital foundations from the ground up — aligned with global standards and long-term vision.",
-    "emphasis": "We operate within this foundational phase."
+    "closing": "This phase represents a strategic opportunity for investors to build a robust and profitable digital business ecosystem.",
+    "emphasis": "We operate within this foundational phase"
   },
   "whatWeBuild": {
     "badge": "What We Build",
-    "headline": "Three pillars. One ecosystem.",
+    "headline": "Three pillars. One vision.",
     "cards": [
       {
         "number": "01",
-        "title": "Scalable Digital Infrastructure",
+        "title": "Web & App Development",
         "points": [
-          "Cloud-native architecture",
-          "API-first systems",
-          "Microservices design",
-          "Security-by-design principles"
+          "UI/UX Design",
+          "Mobile Applications (iOS & Android)",
+          "Websites & E-commerce Platforms",
+          "Custom Enterprise Software Systems"
         ],
-        "closing": "Built for regional scalability from day one."
+        "closing": "We turn your ideas into complete digital products"
       },
       {
         "number": "02",
-        "title": "Telecom & Enterprise Infrastructure",
+        "title": "Digital Marketing",
         "points": [
-          "Advanced messaging platforms",
-          "Identity and verification systems",
-          "SMS & OTP integrations",
-          "Enterprise communication infrastructure"
+          "Paid Advertising Campaigns",
+          "Search Engine Optimization (SEO)",
+          "Social Media Management",
+          "Content Creation & Visual Identity"
         ],
-        "closing": "Engineered for reliability and scalability."
+        "closing": "We build a digital presence that guarantees reach and growth"
       },
       {
         "number": "03",
-        "title": "Operational Technology Investment",
+        "title": "Business Development & Investment",
         "points": [
-          "Deep technical and investment evaluation",
-          "Sustainable growth structuring",
-          "Post-launch operational management",
-          "Long-term strategic partnerships"
+          "Specialized Business Incubators & Accelerators",
+          "Connecting Syrian Projects with Regional Investors",
+          "Investment Opportunity Evaluation & Feasibility Studies",
+          "Structuring Scalable & Sustainable Business Models"
         ],
-        "closing": "We invest in systems — not just ideas."
+        "closing": "We connect capital from KSA, UAE, and Turkey with opportunities in the Syrian market"
       }
     ]
   },
   "businessModel": {
     "badge": "How We Work",
-    "headline": "A clear framework for every engagement.",
-    "body": "Our framework balances risk, innovation, and sustainability.",
+    "headline": "A clear framework for every engagement",
+    "body": "Our framework balances risk, innovation, and sustainability",
     "steps": [
       {
         "number": "01",
@@ -132,7 +132,7 @@
   "valueProposition": {
     "badge": "Our Value",
     "headline": "Built for long-term impact.",
-    "body": "We build for long-term impact, not short-term gains.",
+    "body": "We build for long-term impact, not short-term gains",
     "points": [
       "Regional operational expertise",
       "Deep understanding of local market dynamics",
@@ -143,19 +143,19 @@
   },
   "vision": {
     "badge": "Our Vision",
-    "headline": "A key driver of digital transformation in Syria.",
+    "headline": "The core engine for technical innovation and regional investment.",
     "body": "Over the coming years, we aim to:",
     "points": [
-      "Establish a network of interconnected technology ventures",
-      "Build unified digital infrastructure",
-      "Attract quality investment into the sector",
-      "Develop a model scalable across the region"
+      "Establishing the largest business incubator for tech projects in Syria",
+      "Expanding the investment network between Syria, KSA, UAE, and Turkey",
+      "Providing world-class software and marketing solutions",
+      "Creating a comprehensive entrepreneurial environment that supports innovation and growth"
     ],
     "closing": "We aspire to become a key driver of digital transformation in Syria."
   },
   "governance": {
     "badge": "Commitment",
-    "headline": "Trust is the foundation of every partnership.",
+    "headline": "Trust is the foundation of every partnership",
     "points": [
       "Data protection",
       "High security standards",
@@ -165,8 +165,8 @@
     ]
   },
   "cta": {
-    "headline": "Ready to build the future together?",
-    "body": "Whether you are an investor seeking strategic technology opportunities, a company building scalable digital infrastructure, or a venture looking for a long-term technical partner — we are ready to connect.",
+    "headline": "Ready to succeed together?",
+    "body": "Whether you are looking to develop an app/website for your project, need a marketing plan to boost your sales, or are an investor (from KSA, UAE, Turkey, or elsewhere) seeking strategic opportunities in the Syrian market — we are ready to talk",
     "ctaPrimary": "Start a Strategic Partnership",
     "ctaSecondary": "Explore Investment Opportunities"
   },
@@ -179,9 +179,9 @@
     "messagePlaceholder": "Tell us about your project or inquiry…",
     "typePlaceholder": "Type of inquiry",
     "types": [
-      "Strategic Partnership",
-      "Investment Opportunity",
-      "Technical Consultation",
+      "Software Development (Web & Apps)",
+      "Digital Marketing",
+      "Investment Opportunity / Business Incubator",
       "General Inquiry"
     ],
     "submit": "Send Message",
@@ -190,7 +190,7 @@
     "error": "Something went wrong. Please try again."
   },
   "footer": {
-    "tagline": "Building the next digital infrastructure of the Syrian market.",
+    "tagline": "Building the next digital infrastructure of the Syrian market",
     "links": {
       "company": "Company",
       "about": "About",
@@ -206,7 +206,7 @@
     "copyright": "© {year} Solven Syntrix. All rights reserved."
   },
   "cookie": {
-    "message": "We use cookies to improve your experience and analyse site traffic.",
+    "message": "We use cookies to improve your experience and analyse site traffic",
     "accept": "Accept",
     "decline": "Decline",
     "learnMore": "Learn more",
@@ -221,31 +221,31 @@
     "sections": [
       {
         "title": "Introduction",
-        "body": "Solven Syntrix ('we', 'our', 'us') is committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard information when you visit our website or engage with our services."
+        "body": "Solven Syntrix ('we', 'our', 'us') is committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard information when you visit our website or engage with our services"
       },
       {
         "title": "Information We Collect",
-        "body": "We may collect information you provide directly (name, email, message via our contact form), information collected automatically (cookies, log data, device information), and information from third-party services we use to operate our platform."
+        "body": "We may collect information you provide directly (name, email, message via our contact form), information collected automatically (cookies, log data, device information), and information from third-party services we use to operate our platform"
       },
       {
         "title": "How We Use Your Information",
-        "body": "We use your information to respond to inquiries, improve our website, communicate about partnership opportunities, comply with legal obligations, and analyse site usage to enhance user experience."
+        "body": "We use your information to respond to inquiries, improve our website, communicate about partnership opportunities, comply with legal obligations, and analyse site usage to enhance user experience"
       },
       {
         "title": "Cookies",
-        "body": "We use essential cookies required for the site to function and analytical cookies (with your consent) to understand how visitors interact with our content. You can manage cookie preferences through the banner on your first visit."
+        "body": "We use essential cookies required for the site to function and analytical cookies (with your consent) to understand how visitors interact with our content. You can manage cookie preferences through the banner on your first visit"
       },
       {
         "title": "Data Retention",
-        "body": "We retain personal data for as long as necessary to fulfil the purposes outlined in this policy, or as required by law. Contact form submissions are retained for up to 12 months."
+        "body": "We retain personal data for as long as necessary to fulfil the purposes outlined in this policy, or as required by law. Contact form submissions are retained for up to 12 months"
       },
       {
         "title": "Your Rights",
-        "body": "You have the right to access, correct, or delete your personal data. To exercise these rights, contact us at privacy@solvensyntrix.com."
+        "body": "You have the right to access, correct, or delete your personal data. To exercise these rights, contact us at privacy@solvensyntrix.com"
       },
       {
         "title": "Contact",
-        "body": "For privacy-related inquiries, please email privacy@solvensyntrix.com."
+        "body": "For privacy-related inquiries, please email privacy@solvensyntrix.com"
       }
     ]
   },
@@ -255,35 +255,35 @@
     "sections": [
       {
         "title": "Acceptance of Terms",
-        "body": "By accessing or using the Solven Syntrix website, you agree to be bound by these Terms of Use. If you do not agree, please do not use this site."
+        "body": "By accessing or using the Solven Syntrix website, you agree to be bound by these Terms of Use. If you do not agree, please do not use this site"
       },
       {
         "title": "Use of the Website",
-        "body": "You may use this website for lawful purposes only. You agree not to use the site in any way that could damage, disable, overburden, or impair our services, or interfere with any other party's use of the site."
+        "body": "You may use this website for lawful purposes only. You agree not to use the site in any way that could damage, disable, overburden, or impair our services, or interfere with any other party's use of the site"
       },
       {
         "title": "Intellectual Property",
-        "body": "All content on this website — including text, graphics, logos, and code — is the property of Solven Syntrix or its licensors and is protected by applicable intellectual property laws. Unauthorised reproduction is prohibited."
+        "body": "All content on this website — including text, graphics, logos, and code — is the property of Solven Syntrix or its licensors and is protected by applicable intellectual property laws. Unauthorised reproduction is prohibited"
       },
       {
         "title": "Disclaimer of Warranties",
-        "body": "This website is provided 'as is' without warranties of any kind. We do not warrant that the site will be error-free, uninterrupted, or free of viruses or other harmful components."
+        "body": "This website is provided 'as is' without warranties of any kind. We do not warrant that the site will be error-free, uninterrupted, or free of viruses or other harmful components"
       },
       {
         "title": "Limitation of Liability",
-        "body": "To the fullest extent permitted by law, Solven Syntrix shall not be liable for any indirect, incidental, or consequential damages arising from your use of the website."
+        "body": "To the fullest extent permitted by law, Solven Syntrix shall not be liable for any indirect, incidental, or consequential damages arising from your use of the website"
       },
       {
         "title": "Third-Party Links",
-        "body": "Our site may contain links to third-party websites. We are not responsible for the content or privacy practices of those sites."
+        "body": "Our site may contain links to third-party websites. We are not responsible for the content or privacy practices of those sites"
       },
       {
         "title": "Changes to These Terms",
-        "body": "We reserve the right to update these Terms of Use at any time. Changes will be effective upon posting to this page. Continued use of the site constitutes acceptance of the updated terms."
+        "body": "We reserve the right to update these Terms of Use at any time. Changes will be effective upon posting to this page. Continued use of the site constitutes acceptance of the updated terms"
       },
       {
         "title": "Contact",
-        "body": "For questions about these Terms, please contact legal@solvensyntrix.com."
+        "body": "For questions about these Terms, please contact info@solvensyntrix.com"
       }
     ]
   }
