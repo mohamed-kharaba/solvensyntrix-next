@@ -32,11 +32,11 @@ export function WhatWeBuildSection({ t }: WhatWeBuildSectionProps) {
             {t("headline")}
           </h2>
         </AnimatedSection>
-        <div className="mt-12 grid md:grid-cols-3 gap-px bg-hairline rounded-ds-lg overflow-hidden border border-hairline-strong">
+        <div className="mt-12 grid md:grid-cols-3 gap-px bg-hairline rounded-ds-lg overflow-hidden border border-hairline-strong items-stretch">
           {cards.map((card, i) => {
             const Icon = CARD_ICONS[i] ?? Cloud;
             return (
-              <AnimatedSection key={card.number} variant="fade-up" delay={i * 0.1}>
+              <AnimatedSection key={card.number} variant="fade-up" delay={i * 0.1} className="h-full">
                 <div className="flex flex-col bg-surface-card p-8 h-full">
                   <div className="flex items-start justify-between mb-6">
                     <span className="font-mono text-xs text-charcoal">{card.number}</span>

@@ -204,7 +204,8 @@
       "contact": "Contact",
       "getInTouch": "Get in Touch"
     },
-    "status": "All systems operational",
+    "phone": "+963 999 999 999",
+    "email": "info@solvensyntrix.com",
     "copyright": "© {year} Solven Syntrix. All rights reserved."
   },
   "cookie": {

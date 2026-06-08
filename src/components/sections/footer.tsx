@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
+
 import type { TranslationValues } from "next-intl";
 import { AnimatedSection } from "@/components/animated-section";
 
@@ -13,7 +14,7 @@ interface FooterProps {
 }
 
 export function Footer({ t, locale }: FooterProps) {
-  const year = new Date().getFullYear();
+  const year = 2026;
 
   const companyLinks = [
     { href: `/${locale}/#about`, label: t("links.about") },
@@ -33,21 +34,15 @@ export function Footer({ t, locale }: FooterProps) {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-divider-soft">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <Logo height={28} />
-            <p className="mt-4 font-body text-sm text-ash leading-relaxed max-w-xs">
+            <Logo height={40} />
+            <p className="mt-4 font-body text-sm text-body-text leading-relaxed max-w-xs">
               {t("tagline")}
             </p>
-            <div className="mt-5 flex items-center gap-2">
-              <span className="inline-block h-2 w-2 rounded-ds-full bg-accent-green" />
-              <span className="font-sans text-xs text-charcoal">
-                {t("status")}
-              </span>
-            </div>
           </div>
 
           {/* Company */}
           <div>
-            <p className="font-sans text-xs font-medium text-charcoal uppercase tracking-widest mb-4">
+            <p className="font-sans text-xs font-medium text-ink opacity-50 uppercase tracking-widest mb-4">
               {t("links.company")}
             </p>
             <ul className="space-y-3">
@@ -55,7 +50,7 @@ export function Footer({ t, locale }: FooterProps) {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="font-body text-sm text-ash hover:text-ink transition-colors"
+                    className="font-body text-sm text-body-text hover:text-ink transition-colors"
                   >
                     {l.label}
                   </Link>
@@ -66,7 +61,7 @@ export function Footer({ t, locale }: FooterProps) {
 
           {/* Legal */}
           <div>
-            <p className="font-sans text-xs font-medium text-charcoal uppercase tracking-widest mb-4">
+            <p className="font-sans text-xs font-medium text-ink opacity-50 uppercase tracking-widest mb-4">
               {t("links.legal")}
             </p>
             <ul className="space-y-3">
@@ -74,7 +69,7 @@ export function Footer({ t, locale }: FooterProps) {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="font-body text-sm text-ash hover:text-ink transition-colors"
+                    className="font-body text-sm text-body-text hover:text-ink transition-colors"
                   >
                     {l.label}
                   </Link>
@@ -85,17 +80,33 @@ export function Footer({ t, locale }: FooterProps) {
 
           {/* Contact */}
           <div>
-            <p className="font-sans text-xs font-medium text-charcoal uppercase tracking-widest mb-4">
+            <p className="font-sans text-xs font-medium text-ink opacity-50 uppercase tracking-widest mb-4">
               {t("links.contact")}
             </p>
             <ul className="space-y-3">
               <li>
                 <Link
                   href={`/${locale}/#contact`}
-                  className="font-body text-sm text-ash hover:text-ink transition-colors"
+                  className="font-body text-sm text-body-text hover:text-ink transition-colors"
                 >
                   {t("links.getInTouch")}
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={`tel:${t("phone")}`}
+                  className="font-body text-sm text-body-text hover:text-ink transition-colors"
+                >
+                  {t("phone")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${t("email")}`}
+                  className="font-body text-sm text-body-text hover:text-ink transition-colors"
+                >
+                  {t("email")}
+                </a>
               </li>
             </ul>
           </div>
@@ -103,7 +114,7 @@ export function Footer({ t, locale }: FooterProps) {
         </AnimatedSection>
 
         <div className="pt-8 flex items-center justify-between">
-          <p className="font-sans text-xs text-stone">
+          <p className="font-sans text-xs text-body-text opacity-60">
             {t("copyright", { year })}
           </p>
           <ThemeToggle />

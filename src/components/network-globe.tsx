@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useTheme } from "next-themes";
 
 interface Particle {
   theta: number;
@@ -29,6 +30,22 @@ export function NetworkGlobe() {
   const frameRef  = useRef<number>(0);
   const rotRef    = useRef(0);
   const timeRef   = useRef(0);
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  // Colors derived from theme — dark mode: white, light mode: deep indigo/blue
+  const isLight = mounted && resolvedTheme === "light";
+  const C = {
+    particle:    isLight ? "30,40,120"    : "252,253,255",
+    glowInner:   isLight ? "40,60,200"   : "220,235,255",
+    glowMid:     isLight ? "60,80,200"   : "200,220,255",
+    glowOuter:   isLight ? "80,100,220"  : "180,210,255",
+    connection:  isLight ? "20,30,150"   : "252,253,255",
+    orbiter:     isLight ? "30,50,180"   : "255,255,255",
+    orbiterHalo: isLight ? "50,80,220"   : "220,235,255",
+    spike:       isLight ? "20,40,160"   : "255,255,255",
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -124,7 +141,7 @@ export function NetworkGlobe() {
           if (d2 > 1600) continue;
           const dist = Math.sqrt(d2);
           const alpha = (1 - dist / 40) * 0.3 * a.depth * b.depth;
-          ctx.strokeStyle = `rgba(252,253,255,${alpha.toFixed(3)})`;
+          ctx.strokeStyle = `rgba(${C.connection},${alpha.toFixed(3)})`;
           ctx.lineWidth = 0.55;
           ctx.beginPath();
           ctx.moveTo(cx + a.x * R, cy - a.y * R);
@@ -141,9 +158,9 @@ export function NetworkGlobe() {
 
         if (p.glowing) {
           const bloom = ctx.createRadialGradient(px, py, 0, px, py, sz * 8);
-          bloom.addColorStop(0,    `rgba(220,235,255,${(alpha * 0.9).toFixed(3)})`);
-          bloom.addColorStop(0.2,  `rgba(200,220,255,${(alpha * 0.55).toFixed(3)})`);
-          bloom.addColorStop(0.55, `rgba(180,210,255,${(alpha * 0.12).toFixed(3)})`);
+          bloom.addColorStop(0,    `rgba(${C.glowInner},${(alpha * 0.9).toFixed(3)})`);
+          bloom.addColorStop(0.2,  `rgba(${C.glowMid},${(alpha * 0.55).toFixed(3)})`);
+          bloom.addColorStop(0.55, `rgba(${C.glowOuter},${(alpha * 0.12).toFixed(3)})`);
           bloom.addColorStop(1,    "transparent");
           ctx.fillStyle = bloom;
           ctx.beginPath();
@@ -152,7 +169,7 @@ export function NetworkGlobe() {
 
           ctx.save();
           ctx.globalAlpha = alpha * 0.35;
-          ctx.strokeStyle = "rgba(255,255,255,1)";
+          ctx.strokeStyle = `rgba(${C.spike},1)`;
           ctx.lineWidth = 0.8;
           const spike = sz * 3;
           ctx.beginPath();
@@ -161,21 +178,21 @@ export function NetworkGlobe() {
           ctx.stroke();
           ctx.restore();
 
-          ctx.fillStyle = `rgba(255,255,255,${alpha.toFixed(3)})`;
+          ctx.fillStyle = `rgba(${C.particle},${alpha.toFixed(3)})`;
           ctx.beginPath();
           ctx.arc(px, py, sz * 0.9, 0, Math.PI * 2);
           ctx.fill();
         } else {
           const grd = ctx.createRadialGradient(px, py, 0, px, py, sz * 2.5);
-          grd.addColorStop(0,   `rgba(252,253,255,${alpha.toFixed(3)})`);
-          grd.addColorStop(0.5, `rgba(220,230,255,${(alpha * 0.35).toFixed(3)})`);
+          grd.addColorStop(0,   `rgba(${C.particle},${alpha.toFixed(3)})`);
+          grd.addColorStop(0.5, `rgba(${C.glowMid},${(alpha * 0.35).toFixed(3)})`);
           grd.addColorStop(1,   "transparent");
           ctx.fillStyle = grd;
           ctx.beginPath();
           ctx.arc(px, py, sz * 2.5, 0, Math.PI * 2);
           ctx.fill();
 
-          ctx.fillStyle = `rgba(252,253,255,${alpha.toFixed(3)})`;
+          ctx.fillStyle = `rgba(${C.particle},${alpha.toFixed(3)})`;
           ctx.beginPath();
           ctx.arc(px, py, sz * 0.75, 0, Math.PI * 2);
           ctx.fill();
@@ -209,7 +226,7 @@ export function NetworkGlobe() {
           const tb = orb.trail[t];
           const progress = t / orb.trail.length;
           const tailAlpha = progress * progress * depth * 0.7;
-          ctx.strokeStyle = `rgba(252,253,255,${tailAlpha.toFixed(3)})`;
+          ctx.strokeStyle = `rgba(${C.orbiter},${tailAlpha.toFixed(3)})`;
           ctx.lineWidth = orb.size * progress * 0.55;
           ctx.lineCap = "round";
           ctx.beginPath();
@@ -224,15 +241,15 @@ export function NetworkGlobe() {
         const hpy = cy - wy * R;
 
         const halo = ctx.createRadialGradient(hpx, hpy, 0, hpx, hpy, orb.size * 4);
-        halo.addColorStop(0,   `rgba(255,255,255,${headAlpha.toFixed(3)})`);
-        halo.addColorStop(0.4, `rgba(220,235,255,${(headAlpha * 0.4).toFixed(3)})`);
+        halo.addColorStop(0,   `rgba(${C.orbiter},${headAlpha.toFixed(3)})`);
+        halo.addColorStop(0.4, `rgba(${C.orbiterHalo},${(headAlpha * 0.4).toFixed(3)})`);
         halo.addColorStop(1,   "transparent");
         ctx.fillStyle = halo;
         ctx.beginPath();
         ctx.arc(hpx, hpy, orb.size * 4, 0, Math.PI * 2);
         ctx.fill();
 
-        ctx.fillStyle = `rgba(255,255,255,${headAlpha.toFixed(3)})`;
+        ctx.fillStyle = `rgba(${C.orbiter},${headAlpha.toFixed(3)})`;
         ctx.beginPath();
         ctx.arc(hpx, hpy, orb.size * 0.9, 0, Math.PI * 2);
         ctx.fill();
@@ -257,7 +274,7 @@ export function NetworkGlobe() {
       cancelAnimationFrame(frameRef.current);
       ro.disconnect();
     };
-  }, []);
+  }, [isLight]);
 
   return (
     <div className="relative w-full h-full min-h-80 select-none">
