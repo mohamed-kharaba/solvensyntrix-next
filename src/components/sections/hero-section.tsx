@@ -14,7 +14,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ t, locale }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-canvas px-6 pb-28 pt-16 lg:px-8 lg:pb-36 lg:pt-20">
+    <section className="relative overflow-hidden bg-canvas px-6 pb-10 pt-16 lg:px-8 lg:pb-14 lg:pt-20">
       {/* Blue glow — top-left */}
       <div
         aria-hidden
@@ -34,17 +34,6 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
           background:
             "radial-gradient(circle, rgba(255,89,0,0.14) 0%, transparent 65%)",
           filter: "blur(40px)",
-        }}
-      />
-
-      {/* Green glow — bottom-center */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-125 h-75"
-        style={{
-          background:
-            "radial-gradient(ellipse, rgba(34,255,153,0.08) 0%, transparent 70%)",
-          filter: "blur(30px)",
         }}
       />
 
@@ -104,9 +93,6 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
         >
           <HeroFlowVisual locale={locale} />
         </AnimatedSection>
-
-        {/* Bottom fade line */}
-        <div className="mt-8 w-px h-10 bg-linear-to-b from-hairline-strong to-transparent" />
       </div>
     </section>
   );
