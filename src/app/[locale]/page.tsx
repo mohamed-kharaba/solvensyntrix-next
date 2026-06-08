@@ -47,7 +47,7 @@ export default async function LandingPage({ params }: PageProps) {
       <Navbar locale={locale} />
       <main className="overflow-hidden">
         <HeroSection t={tHero} locale={locale} />
-        <PartnersSection label={tPartners("label")} />
+        <PartnersSection badge={tPartners("badge")} headline={tPartners("headline")} />
         <AboutSection />
         <WhyNowSection t={tWhyNow} />
         <WhatWeBuildSection t={tWhatWeBuild} />
