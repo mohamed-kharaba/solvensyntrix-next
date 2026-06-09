@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: ./html
+      dockerfile: ../Dockerfile
+      args:
+        - NEXT_PUBLIC_SOCIAL_EMAIL=${NEXT_PUBLIC_SOCIAL_EMAIL}
+        - NEXT_PUBLIC_SOCIAL_WHATSAPP=${NEXT_PUBLIC_SOCIAL_WHATSAPP}
+        - NEXT_PUBLIC_SOCIAL_LINKEDIN=${NEXT_PUBLIC_SOCIAL_LINKEDIN}
+        - NEXT_PUBLIC_SOCIAL_INSTAGRAM=${NEXT_PUBLIC_SOCIAL_INSTAGRAM}
+        - NEXT_PUBLIC_SOCIAL_FACEBOOK=${NEXT_PUBLIC_SOCIAL_FACEBOOK}
+        - NEXT_PUBLIC_SOCIAL_SUPPORT=${NEXT_PUBLIC_SOCIAL_SUPPORT}
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${HOST_PORT}:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - RESEND_FROM_EMAIL=${RESEND_FROM_EMAIL}
+      - RESEND_TO_EMAIL=${RESEND_TO_EMAIL}
+    restart: unless-stopped
+    networks:
+      - proxy_network
+networks:
+  proxy_network:
+    name: shared_proxy_network
