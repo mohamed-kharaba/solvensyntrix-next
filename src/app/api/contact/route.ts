@@ -1,8 +1,6 @@
 import { z } from "zod";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const contactSchema = z.object({
   name: z.string().min(1).max(120),
   email: z.string().email(),
@@ -11,6 +9,8 @@ const contactSchema = z.object({
 });
 
 export async function POST(req: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   let body: unknown;
   try {
     body = await req.json();
