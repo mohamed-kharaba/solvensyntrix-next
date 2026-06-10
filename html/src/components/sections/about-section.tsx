@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Cpu, BarChart2, Settings, Handshake } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { AnimatedSection } from "@/components/animated-section";
+import { Section } from "@/components/section";
 
 interface AboutSectionProps {
   locale?: string;
@@ -182,9 +183,7 @@ export function AboutSection({}: AboutSectionProps) {
   const cards = t.raw("cards") as { title: string; description: string }[];
 
   return (
-    <section id="about" className="relative bg-canvas px-6 py-24 lg:px-8 lg:py-32">
-      <div className="mx-auto max-w-300">
-
+    <Section id="about">
         {/* Badge + headline + body */}
         <AnimatedSection variant="fade-up">
           <span className="inline-flex items-center rounded-ds-full border border-hairline-strong bg-surface-elevated px-3 py-1 font-sans text-xs text-body-text uppercase tracking-widest mb-8 shadow-[0_0_8px_rgba(59,158,255,0.2)]">
@@ -210,8 +209,6 @@ export function AboutSection({}: AboutSectionProps) {
             />
           ))}
         </div>
-
-      </div>
-    </section>
+    </Section>
   );
 }

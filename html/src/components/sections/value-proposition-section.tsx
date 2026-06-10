@@ -1,6 +1,7 @@
 import { Shield } from "lucide-react";
 import type { TranslationValues } from "next-intl";
 import { AnimatedSection } from "@/components/animated-section";
+import { Section } from "@/components/section";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type TFn = (key: any, values?: TranslationValues) => string;
@@ -13,9 +14,12 @@ export function ValuePropositionSection({ t }: ValuePropositionSectionProps) {
   const points = t.raw("points") as string[];
 
   return (
-    <section className="relative overflow-hidden bg-canvas px-6 py-24 lg:px-8 lg:py-32">
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-150 glow-green" />
-      <div className="relative mx-auto max-w-300">
+    <Section
+      className="overflow-hidden"
+      decoration={
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-150 glow-green" />
+      }
+    >
         <AnimatedSection variant="fade-up">
           <span className="inline-flex items-center rounded-ds-full border border-hairline-strong bg-surface-elevated px-3 py-1 font-sans text-xs text-body-text mb-6 shadow-[0_0_10px_rgba(17,255,153,0.15)]">
             {t("badge")}
@@ -44,7 +48,6 @@ export function ValuePropositionSection({ t }: ValuePropositionSectionProps) {
             </ul>
           </AnimatedSection>
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }

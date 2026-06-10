@@ -2,6 +2,7 @@ import { TrendingUp } from "lucide-react";
 import type { TranslationValues } from "next-intl";
 import { AnimatedSection } from "@/components/animated-section";
 import { GrowthChart } from "@/components/growth-chart";
+import { Section } from "@/components/section";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type TFn = (key: any, values?: TranslationValues) => string;
@@ -14,10 +15,12 @@ export function WhyNowSection({ t }: WhyNowSectionProps) {
   const points = t.raw("points") as string[];
 
   return (
-    <section className="relative overflow-hidden bg-canvas px-6 py-24 lg:px-8 lg:py-32">
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-150 glow-orange" />
-      <div className="relative mx-auto max-w-[1200px]">
-
+    <Section
+      className="overflow-hidden"
+      decoration={
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-150 glow-orange" />
+      }
+    >
         <AnimatedSection variant="fade-up" className="flex flex-col items-center text-center">
           <span className="inline-flex items-center rounded-ds-full border border-hairline-strong bg-surface-elevated px-3 py-1 font-sans text-xs text-body-text uppercase tracking-widest mb-8 shadow-[0_0_8px_rgba(255,128,31,0.2)]">
             {t("badge")}
@@ -53,8 +56,6 @@ export function WhyNowSection({ t }: WhyNowSectionProps) {
             — {t("emphasis")}
           </p>
         </AnimatedSection>
-
-      </div>
-    </section>
+    </Section>
   );
 }

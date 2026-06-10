@@ -7,6 +7,7 @@ import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedSection } from "@/components/animated-section";
 import { NetworkGlobe } from "@/components/network-globe";
+import { Section } from "@/components/section";
 
 interface ContactFormData {
   name: string;
@@ -52,8 +53,7 @@ export function ContactSection() {
     "w-full h-10 rounded-ds-md border border-hairline-strong bg-surface-card px-3.5 font-sans text-sm text-ink placeholder:text-stone outline-none focus:border-ink transition-colors";
 
   return (
-    <section id="contact" className="relative bg-canvas px-6 py-24 lg:px-8 lg:py-32 overflow-hidden">
-      <div className="mx-auto max-w-300">
+    <Section id="contact" className="overflow-hidden">
         <AnimatedSection variant="fade-up">
           <span className="inline-flex items-center rounded-ds-full border border-hairline-strong bg-surface-elevated px-3 py-1 font-sans text-xs text-body-text mb-6 shadow-[0_0_10px_rgba(59,158,255,0.18)]">
             {t("badge")}
@@ -159,7 +159,6 @@ export function ContactSection() {
           </AnimatedSection>
 
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }
