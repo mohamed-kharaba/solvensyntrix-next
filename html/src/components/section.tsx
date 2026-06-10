@@ -36,7 +36,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn("relative bg-canvas px-6 py-20 lg:px-8", className)}
+      className={cn("relative bg-canvas px-6 py-16 lg:px-8", className)}
     >
       {decoration}
       {bare ? (

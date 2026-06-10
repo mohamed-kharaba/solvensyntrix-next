@@ -240,6 +240,35 @@
     font-family: var(--font-sans), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Offset for the sticky navbar when jumping to #anchors natively
+       (used when Lenis is disabled, e.g. prefers-reduced-motion). */
+    scroll-padding-top: 72px;
+  }
+
+  /* Native smooth anchor scrolling as a no-JS / reduced-motion fallback.
+     When Lenis is active it sets html.lenis and drives scrolling itself. */
+  @media (prefers-reduced-motion: no-preference) {
+    html:not(.lenis) {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Lenis base styles */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: clip;
   }
 
   body {

@@ -8,6 +8,7 @@ import { routing } from "@/i18n/routing";
 import { ReactQueryProvider } from "@/components/react-query-provider";
 import { CookieBanner } from "@/components/cookie-banner";
 import { LoadingOverlay } from "@/components/loading-overlay";
+import { SmoothScroll } from "@/components/smooth-scroll";
 // import { FloatingSidebar } from "@/components/floating-sidebar";
 import "@/app/globals.css";
 
@@ -98,6 +99,7 @@ export default async function LocaleLayout({
           <NextIntlClientProvider messages={messages}>
             <ReactQueryProvider>
               <LoadingOverlay />
+              <SmoothScroll />
               {children}
               {/* <FloatingSidebar /> */}
               <CookieBanner />
