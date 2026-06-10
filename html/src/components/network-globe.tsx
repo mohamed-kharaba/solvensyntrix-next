@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 
 interface Particle {
@@ -31,27 +31,26 @@ export function NetworkGlobe() {
   const rotRef    = useRef(0);
   const timeRef   = useRef(0);
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
-  // Colors derived from theme — dark mode: white, light mode: deep indigo/blue
-  const isLight = mounted && resolvedTheme === "light";
-  const C = {
-    particle:    isLight ? "30,40,120"    : "252,253,255",
-    glowInner:   isLight ? "40,60,200"   : "220,235,255",
-    glowMid:     isLight ? "60,80,200"   : "200,220,255",
-    glowOuter:   isLight ? "80,100,220"  : "180,210,255",
-    connection:  isLight ? "20,30,150"   : "252,253,255",
-    orbiter:     isLight ? "30,50,180"   : "255,255,255",
-    orbiterHalo: isLight ? "50,80,220"   : "220,235,255",
-    spike:       isLight ? "20,40,160"   : "255,255,255",
-  };
+  // Theme only resolves on the client; until then assume dark to match SSR.
+  const isLight = resolvedTheme === "light";
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    // Colors derived from theme — dark mode: white, light mode: deep indigo/blue
+    const C = {
+      particle:    isLight ? "30,40,120"   : "252,253,255",
+      glowInner:   isLight ? "40,60,200"   : "220,235,255",
+      glowMid:     isLight ? "60,80,200"   : "200,220,255",
+      glowOuter:   isLight ? "80,100,220"  : "180,210,255",
+      connection:  isLight ? "20,30,150"   : "252,253,255",
+      orbiter:     isLight ? "30,50,180"   : "255,255,255",
+      orbiterHalo: isLight ? "50,80,220"   : "220,235,255",
+      spike:       isLight ? "20,40,160"   : "255,255,255",
+    };
 
     // ── Static particles ──────────────────────────────────────
     const COUNT = 500;
