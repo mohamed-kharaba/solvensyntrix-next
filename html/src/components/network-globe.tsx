@@ -269,9 +269,43 @@ export function NetworkGlobe() {
     const ro = new ResizeObserver(resize);
     ro.observe(canvas.parentElement!);
 
-    draw();
-    return () => {
+    // Skip the heavy animation loop for users who prefer reduced motion —
+    // render a single static frame instead.
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    let running = false;
+    function start() {
+      if (running) return;
+      running = true;
+      frameRef.current = requestAnimationFrame(draw);
+    }
+    function stop() {
+      running = false;
       cancelAnimationFrame(frameRef.current);
+    }
+
+    if (prefersReduced) {
+      draw();
+      stop(); // draw() queued one more frame; cancel it so it stays static
+    } else {
+      // Only run the render loop while the globe is actually on screen.
+      const io = new IntersectionObserver(
+        ([entry]) => (entry.isIntersecting ? start() : stop()),
+        { threshold: 0 },
+      );
+      io.observe(canvas);
+
+      return () => {
+        stop();
+        io.disconnect();
+        ro.disconnect();
+      };
+    }
+
+    return () => {
+      stop();
       ro.disconnect();
     };
   }, [isLight]);

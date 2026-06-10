@@ -36,8 +36,8 @@ export function Navbar({ locale }: NavbarProps) {
     return (
         <header
             className={cn(
-                "sticky top-0 z-50 w-full border-b transition-all duration-300",
-                scrolled ? "bg-canvas/70 backdrop-blur-md border-hairline-strong" : "bg-canvas border-hairline",
+                "sticky top-0 z-50 w-full border-b transition-colors duration-300 transform-[translateZ(0)]",
+                scrolled ? "bg-canvas/80 backdrop-blur-sm border-hairline-strong" : "bg-canvas border-hairline",
             )}
         >
             <nav className="mx-auto flex h-14 max-w-300 items-center justify-between px-6 lg:px-8">

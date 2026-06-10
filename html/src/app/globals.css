@@ -363,6 +363,17 @@
   .stagger-5 { transition-delay: 0.40s; }
 }
 
+/* ─── Utility: defer off-screen rendering ─────────────────────────────────── */
+@layer utilities {
+  /* Lets the browser skip layout/paint for sections that are off-screen,
+     cutting scroll cost on a long page. The intrinsic size keeps the
+     scrollbar stable before a section is first rendered. */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
+}
+
 /* ─── Utility: atmospheric section glow ───────────────────────────────────── */
 @layer utilities {
   .glow-orange {

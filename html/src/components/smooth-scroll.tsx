@@ -20,12 +20,13 @@ export function SmoothScroll() {
     if (prefersReduced) return;
 
     const lenis = new Lenis({
-      duration: 1.15, // higher = longer, more weighted glide
-      // easeOutExpo — starts with momentum then decelerates into place,
-      // giving the "slow → fast → slow" weighted feel.
-      easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+      // lerp follows the real scroll position each frame instead of animating
+      // a fixed-duration tween per wheel tick — more responsive and far less
+      // "laggy" on weaker devices, while still giving an eased glide.
+      lerp: 0.1, // 0 = no smoothing, 1 = instant; lower = smoother/heavier
       wheelMultiplier: 1,
       touchMultiplier: 1.5,
+      syncTouch: true,
     });
 
     let frame = 0;
