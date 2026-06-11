@@ -18,9 +18,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script_stop: true
           script: |
-            whoami
-            echo "HOME=$HOME"
-            ls ~/.ssh/
             git config --global --add safe.directory /home/solvensyntrix/www/solvensyntrix.com
             ssh-keyscan github.com >> ~/.ssh/known_hosts
             cd /home/solvensyntrix/www/solvensyntrix.com
