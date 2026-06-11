@@ -1,7 +1,11 @@
 {
   "meta": {
+    "siteName": "Solven Syntrix",
     "title": "Solven Syntrix — Digital Infrastructure for Syria",
+    "titleTemplate": "%s — Solven Syntrix",
     "description": "A leading tech firm in software development, web design, digital marketing, and a business incubator connecting regional investors to the Syrian market.",
+    "keywords": "Solven Syntrix, Syria technology, software development Syria, web development Syria, digital marketing Syria, business incubator Syria, Syrian market investment, digital infrastructure Syria, fintech Syria, startups Syria, IT company Syria, app development Middle East",
+    "ogAlt": "Solven Syntrix — Digital Infrastructure for the Syrian Market",
     "privacyTitle": "Privacy Policy — Solven Syntrix",
     "termsTitle": "Terms of Use — Solven Syntrix"
   },

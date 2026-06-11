@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans, Inter, Geist_Mono, Tajawal } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -9,6 +9,8 @@ import { ReactQueryProvider } from "@/components/react-query-provider";
 import { CookieBanner } from "@/components/cookie-banner";
 import { LoadingOverlay } from "@/components/loading-overlay";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { siteConfig, absoluteUrl, languageAlternates } from "@/lib/site";
+import { StructuredData } from "@/components/structured-data";
 // import { FloatingSidebar } from "@/components/floating-sidebar";
 import "@/app/globals.css";
 
@@ -54,14 +56,75 @@ interface LocaleLayoutProps {
   params: Promise<{ locale: string }>;
 }
 
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
+};
+
 export async function generateMetadata({
   params,
 }: LocaleLayoutProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
+
+  const title = t("title");
+  const description = t("description");
+  const ogLocale = locale === "ar" ? "ar_SY" : "en_US";
+  const ogAlternate = locale === "ar" ? "en_US" : "ar_SY";
+
+  // The home page for each locale is "/<locale>".
+  const localePath = (l: string) => `/${l}`;
+
   return {
-    title: t("title"),
-    description: t("description"),
+    metadataBase: new URL(siteConfig.url),
+    title: {
+      default: title,
+      template: t("titleTemplate"),
+    },
+    description,
+    keywords: t("keywords"),
+    applicationName: t("siteName"),
+    authors: [{ name: t("siteName"), url: siteConfig.url }],
+    creator: t("siteName"),
+    publisher: t("siteName"),
+    alternates: {
+      canonical: absoluteUrl(localePath(locale)),
+      languages: languageAlternates(localePath),
+    },
+    openGraph: {
+      type: "website",
+      siteName: t("siteName"),
+      title,
+      description,
+      url: absoluteUrl(localePath(locale)),
+      locale: ogLocale,
+      alternateLocale: ogAlternate,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: t("ogAlt"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [siteConfig.ogImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
     icons: {
       icon: [
         { url: "/favicon-dark.svg", media: "(prefers-color-scheme: light)", type: "image/svg+xml" },
@@ -86,6 +149,7 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
+  const tMeta = await getTranslations({ locale, namespace: "meta" });
 
   return (
     <html
@@ -104,6 +168,7 @@ export default async function LocaleLayout({
               "document.documentElement.classList.add('js')",
           }}
         />
+        <StructuredData locale={locale} description={tMeta("description")} />
       </head>
       <body suppressHydrationWarning>
         <ThemeProvider

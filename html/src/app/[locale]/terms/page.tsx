@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { ArrowLeft } from "lucide-react";
+import { absoluteUrl, languageAlternates } from "@/lib/site";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -10,7 +11,14 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  return { title: t("termsTitle") };
+  const path = (l: string) => `/${l}/terms`;
+  return {
+    title: t("termsTitle"),
+    alternates: {
+      canonical: absoluteUrl(path(locale)),
+      languages: languageAlternates(path),
+    },
+  };
 }
 
 interface Section {
