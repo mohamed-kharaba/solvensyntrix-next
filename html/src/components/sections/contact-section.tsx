@@ -94,6 +94,7 @@ export function ContactSection() {
                   value={form.name}
                   onChange={handleChange}
                   placeholder={t("namePlaceholder")}
+                  aria-label={t("namePlaceholder")}
                   className={inputCls}
                 />
                 <input
@@ -103,12 +104,14 @@ export function ContactSection() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder={t("emailPlaceholder")}
+                  aria-label={t("emailPlaceholder")}
                   className={inputCls}
                 />
                 <select
                   name="type"
                   value={form.type}
                   onChange={handleChange}
+                  aria-label={t("typePlaceholder")}
                   className={cn(inputCls, "appearance-none")}
                 >
                   <option value="" disabled>
@@ -126,6 +129,7 @@ export function ContactSection() {
                   value={form.message}
                   onChange={handleChange}
                   placeholder={t("messagePlaceholder")}
+                  aria-label={t("messagePlaceholder")}
                   rows={5}
                   className={cn(inputCls, "h-auto resize-none py-2.5")}
                 />

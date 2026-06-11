@@ -14,16 +14,26 @@ import { StructuredData } from "@/components/structured-data";
 // import { FloatingSidebar } from "@/components/floating-sidebar";
 import "@/app/globals.css";
 
+// Display font — used by the LCP <h1>. Preloaded (default) and limited to the
+// weights actually rendered so the woff2 stays small and lands fast.
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
   variable: "--font-display",
   display: "swap",
+  preload: true,
+  fallback: ["Georgia", "serif"],
+  adjustFontFallback: true,
 });
 
+// Body font — above the fold too, keep preloaded.
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
+  adjustFontFallback: true,
 });
 
 // Not used above the fold — skip preload so it doesn't compete with the

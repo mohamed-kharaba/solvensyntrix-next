@@ -37,6 +37,11 @@ export function CookieBanner() {
           <Link
             href={`/${locale}/privacy-policy`}
             className="text-link underline underline-offset-2 hover:text-ink transition-colors"
+            aria-label={
+              locale === "ar"
+                ? "اقرأ سياسة الخصوصية"
+                : "Read our Privacy Policy"
+            }
           >
             {t("learnMore")}
           </Link>
