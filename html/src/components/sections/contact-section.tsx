@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { useMutation } from "@tanstack/react-query";
 import { Send, CheckCircle2, AlertCircle, RotateCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -21,6 +21,7 @@ interface ContactFormData {
   email: string;
   type: string;
   message: string;
+  locale: string;
 }
 
 async function submitContact(data: ContactFormData): Promise<void> {
@@ -34,6 +35,7 @@ async function submitContact(data: ContactFormData): Promise<void> {
 
 export function ContactSection() {
   const t = useTranslations("contact");
+  const locale = useLocale();
   const types = t.raw("types") as string[];
 
   const [form, setForm] = useState<ContactFormData>({
@@ -41,6 +43,7 @@ export function ContactSection() {
     email: "",
     type: "",
     message: "",
+    locale,
   });
 
   const mutation = useMutation({ mutationFn: submitContact });
@@ -106,7 +109,7 @@ export function ContactSection() {
                   type="button"
                   onClick={() => {
                     mutation.reset();
-                    setForm({ name: "", email: "", type: "", message: "" });
+                    setForm({ name: "", email: "", type: "", message: "", locale });
                   }}
                   className="inline-flex items-center gap-2 rounded-ds-md border border-hairline-strong bg-surface-card px-4 py-2 font-sans text-sm text-body-text transition-colors hover:border-accent-green/40 hover:text-ink"
                 >
