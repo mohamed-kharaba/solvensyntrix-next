@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useMutation } from "@tanstack/react-query";
-import { Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Send, CheckCircle2, AlertCircle, RotateCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
 import { AnimatedSection } from "@/components/animated-section";
@@ -82,9 +82,37 @@ export function ContactSection() {
 
             {/* Form — no card wrapper, just the fields */}
             {mutation.isSuccess ? (
-              <div className="flex flex-col items-center gap-4 py-12 text-center">
-                <CheckCircle size={32} className="text-accent-green" />
-                <p className="font-body text-base text-body-text">{t("success")}</p>
+              <div className="flex flex-col items-center gap-6 py-12 text-center">
+                {/* Glow ring + icon */}
+                <div className="relative flex items-center justify-center">
+                  <div className="absolute h-20 w-20 rounded-full bg-accent-green/10 blur-xl" />
+                  <div className="relative flex h-14 w-14 items-center justify-center rounded-full border border-accent-green/30 bg-surface-card shadow-[0_0_24px_rgba(17,255,153,0.15)]">
+                    <CheckCircle2 size={28} className="text-accent-green" strokeWidth={1.5} />
+                  </div>
+                </div>
+
+                {/* Text */}
+                <div className="flex flex-col gap-2">
+                  <p className="font-display text-xl tracking-tight text-ink">
+                    {t("success")}
+                  </p>
+                  <p className="font-body text-sm text-body-text leading-relaxed max-w-xs mx-auto">
+                    {t("successDetail")}
+                  </p>
+                </div>
+
+                {/* Send another button */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    mutation.reset();
+                    setForm({ name: "", email: "", type: "", message: "" });
+                  }}
+                  className="inline-flex items-center gap-2 rounded-ds-md border border-hairline-strong bg-surface-card px-4 py-2 font-sans text-sm text-body-text transition-colors hover:border-accent-green/40 hover:text-ink"
+                >
+                  <RotateCcw size={13} />
+                  {t("sendAnother")}
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">

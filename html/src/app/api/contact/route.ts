@@ -27,8 +27,8 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: `Solven Syntrix <${process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev"}>`,
-      to: [process.env.RESEND_TO_EMAIL ?? "s.altout@solvensyntrix.com"],
+      from: `Solven Syntrix <${process.env.RESEND_FROM_EMAIL ?? "info@solvensyntrix.com"}>`,
+      to: [process.env.RESEND_TO_EMAIL ?? "info@solvensyntrix.com"],
       replyTo: email,
       subject: `[${type ?? "Contact"}] Message from ${name}`,
       text: `From: ${name} <${email}>\nType: ${type ?? "—"}\n\n${message}`,

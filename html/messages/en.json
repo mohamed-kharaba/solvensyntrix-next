@@ -193,6 +193,8 @@
     "submit": "Send Message",
     "submitting": "Sending…",
     "success": "Message sent. We'll be in touch soon.",
+    "successDetail": "Our team will review your inquiry and respond within 48 hours.",
+    "sendAnother": "Send Another Message",
     "error": "Something went wrong. Please try again."
   },
   "footer": {
