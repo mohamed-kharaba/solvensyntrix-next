@@ -30,7 +30,7 @@ export default async function PrivacyPolicyPage({ params }: PageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "privacy" });
   const sections = t.raw("sections") as Section[];
-  const date = "2025-01-01";
+  const date = "2026-06-11";
 
   return (
     <main className="min-h-screen bg-canvas px-6 py-24 lg:px-8">
