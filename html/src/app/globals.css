@@ -313,38 +313,41 @@
 
 /* ─── Entrance animations ─────────────────────────────────────────────────── */
 @layer utilities {
-  /* Base: hidden state */
-  .anim-fade-up {
+  /* The hidden start state is applied ONLY when JS is active (html.js, set by
+     an inline script before paint). Without JS — or before hydration on slow
+     devices — content stays visible, so above-the-fold text paints immediately
+     and isn't blocked behind hydration (keeps LCP fast). */
+  html.js .anim-fade-up {
     opacity: 0;
     transform: translateY(32px);
     transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .anim-fade-down {
+  html.js .anim-fade-down {
     opacity: 0;
     transform: translateY(-24px);
     transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .anim-fade-left {
+  html.js .anim-fade-left {
     opacity: 0;
     transform: translateX(-36px);
     transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .anim-fade-right {
+  html.js .anim-fade-right {
     opacity: 0;
     transform: translateX(36px);
     transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .anim-scale-up {
+  html.js .anim-scale-up {
     opacity: 0;
     transform: scale(0.94);
     transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .anim-fade {
+  html.js .anim-fade {
     opacity: 0;
     transition: opacity 0.7s ease;
   }

@@ -5,9 +5,16 @@ import { useTranslations } from "next-intl";
 import { useMutation } from "@tanstack/react-query";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import dynamic from "next/dynamic";
 import { AnimatedSection } from "@/components/animated-section";
-import { NetworkGlobe } from "@/components/network-globe";
 import { Section } from "@/components/section";
+
+// Heavy canvas visual, below the fold — load it lazily so it stays out of the
+// initial JS bundle and doesn't add to TBT on first load.
+const NetworkGlobe = dynamic(
+  () => import("@/components/network-globe").then((m) => m.NetworkGlobe),
+  { ssr: false },
+);
 
 interface ContactFormData {
   name: string;

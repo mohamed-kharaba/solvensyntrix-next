@@ -24,23 +24,29 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+// Not used above the fold — skip preload so it doesn't compete with the
+// display/body fonts for the LCP text.
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
+  preload: false,
 });
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
+  preload: false,
 });
 
+// Arabic-only; never needed on the English LCP path.
 const tajawal = Tajawal({
   subsets: ["arabic"],
   weight: ["400", "500", "700"],
   variable: "--font-tajawal",
   display: "swap",
+  preload: false,
 });
 
 interface LocaleLayoutProps {
@@ -88,6 +94,17 @@ export default async function LocaleLayout({
       suppressHydrationWarning
       className={`${playfairDisplay.variable} ${dmSans.variable} ${inter.variable} ${geistMono.variable} ${tajawal.variable}`}
     >
+      <head>
+        {/* Marks JS active before paint. Entrance animations only hide their
+            content under html.js, so if JS is slow/absent content stays
+            visible and paints immediately — keeps LCP fast on mobile. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "document.documentElement.classList.add('js')",
+          }}
+        />
+      </head>
       <body suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
@@ -106,6 +123,15 @@ export default async function LocaleLayout({
             </ReactQueryProvider>
           </NextIntlClientProvider>
         </ThemeProvider>
+        {/* Reveal above-the-fold entrance elements as soon as the HTML is
+            parsed — before React hydration — so LCP text isn't held at
+            opacity:0 on slow devices. Off-screen ones stay hidden for the
+            IntersectionObserver to animate in on scroll. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;var els=document.querySelectorAll('[class*=anim-]');for(var i=0;i<els.length;i++){var r=els[i].getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)els[i].classList.add('in-view')}})()`,
+          }}
+        />
       </body>
     </html>
   );
