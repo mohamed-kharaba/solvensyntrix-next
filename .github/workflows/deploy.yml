@@ -19,6 +19,7 @@ jobs:
           script_stop: true
           script: |
             git config --global --add safe.directory /home/solvensyntrix/www/solvensyntrix.com
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
             cd /home/solvensyntrix/www/solvensyntrix.com
             git pull origin main
             docker compose down --remove-orphans
