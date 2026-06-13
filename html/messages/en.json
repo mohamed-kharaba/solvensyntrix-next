@@ -37,6 +37,7 @@
     "badge": "Who We Are",
     "headline": "We combine technical excellence with investment power",
     "body": "We are a full-service technology company for software development and digital marketing, while simultaneously operating as a strategic business incubator and accelerator connecting a network of investors from KSA, UAE, Turkey, and Syria",
+    "readMore": "Read more →",
     "cards": [
       {
         "title": "Software Design & Development",
@@ -71,40 +72,51 @@
   },
   "whatWeBuild": {
     "badge": "What We Build",
-    "headline": "Three pillars. One vision.",
+    "headline": "Four pillars. One vision.",
     "cards": [
       {
         "number": "01",
-        "title": "Web & App Development",
+        "title": "Strategic Partnerships & Business Development",
         "points": [
-          "UI/UX Design",
-          "Mobile Applications (iOS & Android)",
-          "Websites & E-commerce Platforms",
-          "Custom Enterprise Software Systems"
+          "Helping companies enter the Syrian market",
+          "Identifying distributors and channel partners",
+          "Building strategic alliances across the region",
+          "Developing scalable distribution channels"
         ],
-        "closing": "We turn your ideas into complete digital products"
+        "closing": "Your gateway to the Syrian market and regional networks"
       },
       {
         "number": "02",
-        "title": "Digital Marketing",
+        "title": "Investment & Growth Enablement",
         "points": [
-          "Paid Advertising Campaigns",
-          "Search Engine Optimization (SEO)",
-          "Social Media Management",
-          "Content Creation & Visual Identity"
+          "Connecting investors with scalable local opportunities",
+          "Local execution partnerships for regional investors",
+          "Investment opportunity evaluation & feasibility studies",
+          "Structuring sustainable and scalable business models"
         ],
-        "closing": "We build a digital presence that guarantees reach and growth"
+        "closing": "We connect capital from KSA, UAE, and Turkey with Syrian market opportunities"
       },
       {
         "number": "03",
-        "title": "Business Development & Investment",
+        "title": "Digital Growth Solutions",
         "points": [
-          "Specialized Business Incubators & Accelerators",
-          "Connecting Syrian Projects with Regional Investors",
-          "Investment Opportunity Evaluation & Feasibility Studies",
-          "Structuring Scalable & Sustainable Business Models"
+          "Search Engine Optimization (SEO) & Visibility",
+          "Social Media Management & Paid Advertising",
+          "Lead Generation & Customer Acquisition",
+          "E-commerce Growth & Brand Building"
         ],
-        "closing": "We connect capital from KSA, UAE, and Turkey with opportunities in the Syrian market"
+        "closing": "We grow your customer base and digital presence with measurable results"
+      },
+      {
+        "number": "04",
+        "title": "Technology Solutions",
+        "points": [
+          "Website & E-commerce Platform Development",
+          "Mobile Applications (iOS & Android)",
+          "Custom Digital Platforms & Enterprise Systems",
+          "AI & Automation Solutions"
+        ],
+        "closing": "We build the technology that powers your digital business"
       }
     ]
   },

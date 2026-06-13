@@ -1,4 +1,4 @@
-import { Cloud, Radio, TrendingUp, CheckCircle } from "lucide-react";
+import { Users, TrendingUp, Megaphone, Code2, CheckCircle } from "lucide-react";
 import type { TranslationValues } from "next-intl";
 import { AnimatedSection } from "@/components/animated-section";
 import { Section } from "@/components/section";
@@ -17,7 +17,7 @@ interface WhatWeBuildSectionProps {
   t: TFn & { raw: (key: string) => unknown };
 }
 
-const CARD_ICONS = [Cloud, Radio, TrendingUp];
+const CARD_ICONS = [Users, TrendingUp, Megaphone, Code2];
 
 export function WhatWeBuildSection({ t }: WhatWeBuildSectionProps) {
   const cards = t.raw("cards") as Card[];
@@ -32,9 +32,9 @@ export function WhatWeBuildSection({ t }: WhatWeBuildSectionProps) {
             {t("headline")}
           </h2>
         </AnimatedSection>
-        <div className="mt-12 grid md:grid-cols-3 gap-px bg-hairline rounded-ds-lg overflow-hidden border border-hairline-strong items-stretch">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-hairline rounded-ds-lg overflow-hidden border border-hairline-strong items-stretch">
           {cards.map((card, i) => {
-            const Icon = CARD_ICONS[i] ?? Cloud;
+            const Icon = CARD_ICONS[i] ?? Users;
             return (
               <AnimatedSection key={card.number} variant="fade-up" delay={i * 0.1} className="h-full">
                 <div className="flex flex-col bg-surface-card p-8 h-full">
