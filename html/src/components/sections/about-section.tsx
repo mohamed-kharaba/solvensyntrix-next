@@ -46,11 +46,13 @@ function FlipCard({
   description,
   meta,
   delay,
+  readMore,
 }: {
   title: string;
   description: string;
   meta: (typeof CARD_META)[number];
   delay: number;
+  readMore: string;
 }) {
   const [flipped, setFlipped] = useState(false);
   const { Icon, accent, accentGlow, accentBg, num } = meta;
@@ -116,7 +118,7 @@ function FlipCard({
                 className="mt-2 font-sans text-xs uppercase tracking-widest"
                 style={{ color: accent }}
               >
-                Read more →
+                {readMore}
               </p>
             </div>
           </div>
@@ -206,6 +208,7 @@ export function AboutSection({}: AboutSectionProps) {
               description={card.description}
               meta={CARD_META[i]}
               delay={0.1 + i * 0.08}
+              readMore={t("readMore")}
             />
           ))}
         </div>
